@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "编译当前 C 文件",
+            "type": "process",
+            "command": "cl.exe",
+            "args": [
+                "/nologo",
+                "/W4",
+                "/utf-8",
+                "/Zi",
+                "/Od",
+                "${file}",
+                "/Fe:${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "/Fo:${fileDirname}\\${fileBasenameNoExtension}.obj",
+                "/Fd:${fileDirname}\\${fileBasenameNoExtension}.pdb",
+                "/link",
+                "/INCREMENTAL:NO"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
