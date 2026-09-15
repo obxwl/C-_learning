@@ -1,19 +1,41 @@
+// #include <stdio.h>
+
+// int main(){
+
+//     for(int i=1; i<=5; i++){
+//         int second = i;
+//         int speed = i*2;
+//         int position += speed ;
+//         printf("second=%d speed=%d position=%d\n", second, speed, position);
+//     }
+//     return  0;
+
+// }
 #include <stdio.h>
-
-int main(void)
-{
-    int speed = 0;
-    int position = 0;
-
-    for (int second = 1; second <= 5; second++)
-    {
-        speed += 2;
-        position += speed;
-
-        printf("second=%d speed=%d position=%d\n",
-               second, speed, position);
+int limit(int speed, int limit ){
+    if(speed > limit){
+        speed = limit;
     }
-
-    return 0;
+    return speed;
 }
 
+int main(){
+int speed = 0,position = 0 ,second = 0 ,target =0 ;
+    scanf_s("%d",&target);
+    if (target <=0)
+    {
+        printf("Invalid distance\n");
+    }else{
+while ( position < target)
+        {
+        second += 1;
+        speed += 2 ;
+        if( speed >=6){
+            speed = limit(speed,6);
+        }
+        position += speed;
+        printf("second=%d speed=%d position=%d\n", second, speed, position);    
+        }
+       return 0 ;
+    }
+}
