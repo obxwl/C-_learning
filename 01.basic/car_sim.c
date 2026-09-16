@@ -1,16 +1,3 @@
-// #include <stdio.h>
-
-// int main(){
-
-//     for(int i=1; i<=5; i++){
-//         int second = i;
-//         int speed = i*2;
-//         int position += speed ;
-//         printf("second=%d speed=%d position=%d\n", second, speed, position);
-//     }
-//     return  0;
-
-// }
 #include <stdio.h>
 int limit(int speed, int limit ){
     if(speed > limit){
